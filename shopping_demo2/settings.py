@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
+import django
 import sys
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -30,7 +31,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
+django.setup()
 # Application definition
 
 INSTALLED_APPS = [
@@ -41,10 +42,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'apps.users.apps.UsersConfig',
     'DjangoUeditor',
-    'users',
     'goods',
     'trade',
-    'user_operation'
+    'user_operation',
+    'xadmin'
 ]
 
 MIDDLEWARE = [
