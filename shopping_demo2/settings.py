@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 import os
 import django
 import sys
+import datetime
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -31,21 +32,25 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-django.setup()
 # Application definition
 
 INSTALLED_APPS = [
+    'rest_framework',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'apps.users.apps.UsersConfig',
+    'users.apps.UsersConfig',
     'DjangoUeditor',
+    'crispy_forms',
+    'django_filters',
     'goods',
     'trade',
     'user_operation',
-    'xadmin'
+    'django.contrib.admin',
+    'xadmin',
+    'rest_framework.authtoken'
 ]
 
 MIDDLEWARE = [
@@ -89,7 +94,7 @@ DATABASES = {
         'NAME': 'emshop',
         'USER':'root',
         'PASSWORD':'#edcVfr4%t',
-        'HOST':'127.0.0.1',
+        'HOST':'localhost',
        'OPTIONS': {
             'init_command':'SET default_storage_engine = INNODB',
         }
@@ -116,7 +121,9 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
+# AUTHENTICATION_BACKENDS = (
+#     'users.views.MyLogin',
+# )
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
 
@@ -130,8 +137,28 @@ USE_L10N = True
 
 USE_TZ = True
 
-
+REST_FRAMEWORK = {
+    # 'DEFAULT_PERMISSION_CLASSES': (
+    #     'rest_framework.permissions.IsAuthenticated',
+    # ),
+    # "DEFAULT_PAGINATION_CLASS":"rest_framework.pagination.PageNumberPagination",
+    # "PAGE_SIZE":10
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+        # 'rest_framework.authentication.TokenAuthentication'
+    )
+}
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+#for ueditor widget
+MEDIA_URL = "/media/"
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+
+JWT_AUTH = {
+    'JWT_EXPIRATION_DELTA':datetime.timedelta(days=7),
+    'JWT_AUTH_HEADER_PREFIX': 'Token',
+}

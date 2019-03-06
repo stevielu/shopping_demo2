@@ -19,20 +19,20 @@ class UserProfile(AbstractUser):
         verbose_name_plural = "用户"
 
     def __str__(self):
-        return self.name
+        return self.username
 
 
-    class VerifyCode(models.Model):
-        """
-        短信验证码
-        """
-        code = models.CharField(max_length=10, verbose_name="验证码")
-        mobile = models.CharField(max_length=11, verbose_name="电话")
-        add_time = models.DateTimeField(default=datetime.now, verbose_name="添加时间")
+class VerifyCode(models.Model):
+    """
+    短信验证码
+    """
+    code = models.CharField(max_length=10, verbose_name="验证码")
+    mobile = models.CharField(max_length=11, verbose_name="电话")
+    add_time = models.DateTimeField(default=datetime.now, verbose_name="添加时间")
 
-        class Meta:
-            verbose_name = "短信验证码"
-            verbose_name_plural = verbose_name
+    class Meta:
+        verbose_name = "短信验证码"
+        verbose_name_plural = verbose_name
 
-        def __str__(self):
-            return self.code
+    def __str__(self):
+        return self.code
