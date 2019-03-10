@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" serverName="qwshop">
+  <component name="PublishConfigData" serverName="iqql">
     <serverData>
-      <paths name="qwshop">
+      <paths name="iqql">
         <serverdata>
           <mappings>
-            <mapping deploy="/home/stevie/www/qwshop" local="$PROJECT_DIR$" web="/" />
+            <mapping deploy="/var/www" local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>
