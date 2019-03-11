@@ -2,8 +2,8 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="0d03d859-0a7c-4525-b232-a6a2d46b66d5" name="iqql" url="http://45.76.163.101">
-        <fileTransfer host="45.76.163.101" port="21" rootFolder="/var/www">
+      <webServer id="0d03d859-0a7c-4525-b232-a6a2d46b66d5" name="emshop" url="http://149.28.232.215">
+        <fileTransfer host="149.28.232.215" port="21" rootFolder="/var/www">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" shareSSLContext="true" />
           </advancedOptions>

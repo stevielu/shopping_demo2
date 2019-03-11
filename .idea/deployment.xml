@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" serverName="iqql">
+  <component name="PublishConfigData" serverName="emshop">
     <serverData>
-      <paths name="iqql">
+      <paths name="emshop">
         <serverdata>
           <mappings>
-            <mapping deploy="/var/www" local="$PROJECT_DIR$" web="/" />
+            <mapping deploy="/emshop/" local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>
